@@ -8,3 +8,20 @@ log_file = 'logs_file.log'
 
 # Copy and save file
 local_file, headers = urlretrieve(url_path, log_file)
+
+# Open file to append lines of text into a list
+# Lines of text refer to total requests in the log
+file = open("logs_file.log", "r")
+# Create list
+requests_list = []
+# Loop through all lines of text file and append each to the list
+for x in file:
+    line = x.strip()
+    line_list = line.split()
+    requests_list.append(line_list)
+
+# Close file
+file.close()
+
+print("Successfully read log file...")
+print()
