@@ -28,7 +28,7 @@ file.close()
 
 # Since all lines, or requests, have been appended into the list, we only need to know the length or number of items on
 # a list to know the total number of requests in the log file
-n_requests = len(request_list)
+n_requests = len(requests_list)
 
 # Print the length or number of requests of the text file
 print("Number of requests in the period:", n_requests)
