@@ -24,6 +24,27 @@ for x in file:
 # Close the file
 file.close()
 
+# 1. How many total requests have been made in the last year?
+
+# Open file again to count the number of occurrences of text
+# By counting the number a year is logged we can see how many requests happened last year
+file = open("logs_file.log", "r")
+# Read the contents of text file
+data = file.read()
+
+# Count the number of requests of each of the last six months
+months = ["May","Jun", "Jul", "Aug", "Sep", "Oct"]
+m_requests = []
+for m in months:
+    requests = data.count(f'{m}/1995')
+    m_requests.append(requests)
+# Sum the total of requests per month
+total_requests = sum(m_requests)
+# Print result
+print("Number of requests made in the last six months:", total_requests )
+# Close file
+file.close()
+
 # 2. How many total requests were made in the time period represented by the log?
 
 # Since all lines, or requests, have been appended into the list, we only need to know the length or number of items on
