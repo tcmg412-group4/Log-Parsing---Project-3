@@ -1,15 +1,11 @@
 # Beginning of code
 # Import to retrieve log file from url
-from urllib.request import urlretrieve
-# url
-url_path = 'https://s3.amazonaws.com/tcmg476/http_access_log'
-# Name of the file
-log_file = 'logs_file.log'
-
-# Copy and save file
-local_file, headers = urlretrieve(url_path, log_file)
-
-
+import urllib.request
+import shutil
+# Download the file from `url` and save it locally under `logs_file.log`:
+with urllib.request.urlopen('https://s3.amazonaws.com/tcmg476/http_access_log') as response, open('logs_file.log', 'wb') as out_file:
+    shutil.copyfileobj(response, out_file)
+    
 # Open file to append lines of text into a list
 # Lines of text refer to total requests in the log
 file = open("logs_file.log", "r")
