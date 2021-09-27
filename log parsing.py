@@ -24,5 +24,14 @@ for x in file:
 # Close the file
 file.close()
 
+# 2. How many total requests were made in the time period represented by the log?
+
+# Since all lines, or requests, have been appended into the list, we only need to know the length or number of items on
+# a list to know the total number of requests in the log file
+n_requests = len(request_list)
+
+# Print the length or number of requests of the text file
+print("Number of requests in the period:", n_requests)
+
 print("Successfully parsed log file...")
 print()
