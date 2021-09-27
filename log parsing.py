@@ -32,6 +32,6 @@ n_requests = len(requests_list)
 
 # Print the length or number of requests of the text file
 print("Number of requests in the period:", n_requests)
-
+# Print if the file was successfully parsed or not
 print("Successfully parsed log file...")
 print()
