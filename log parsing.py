@@ -27,7 +27,6 @@ file.close()
 file = open("logs_file.log", "r")
 # Read the contents of text file
 data = file.read()
-
 # Count the number of requests of each of the last six months
 months = ["May","Jun", "Jul", "Aug", "Sep", "Oct"]
 m_requests = []
@@ -37,7 +36,7 @@ for m in months:
 # Sum the total of requests per month
 total_requests = sum(m_requests)
 # Print result
-print("Number of requests made in the last six months:", total_requests )
+print("Number of requests made in the last six months:", total_requests)
 # Close file
 file.close()
 
@@ -49,6 +48,7 @@ n_requests = len(requests_list)
 
 # Print the length or number of requests of the text file
 print("Number of requests in the period:", n_requests)
+
 # Print if the file was successfully parsed or not
 print("Successfully parsed log file...")
 print()
