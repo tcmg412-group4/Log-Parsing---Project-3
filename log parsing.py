@@ -52,3 +52,30 @@ print("Number of requests in the period:", n_requests)
 # Print if the file was successfully parsed or not
 print("Successfully parsed log file...")
 print()
+
+# Questions 3 and 4. What % of HTTP status codes were 4xx and what % were 3xx?
+# Open file to run regex to split up strings
+file = open("logs_file.log", "r")
+# Run Regex on log file
+regex = '(\d{3})'
+# Create a list
+match_list = []
+read_line = True
+
+with open('logs_file.log', 'r') as file:
+    if read_line == True:
+        for line in file:
+            for match in re.finditer(regex, line, re.S):
+                match_text = match.group()
+                match_list.append(match_text)
+                print(match_text)
+    else:
+        data = file.read()
+        for match in re.finditer(regex, data, re.S):
+            match_text = match.group()
+            match_list.append(match.text)
+
+# print(match_list)
+for match_list
+# Close the file
+file.close()
