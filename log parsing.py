@@ -97,7 +97,5 @@ for res in match_list: #loop through contents of list
         count4xx = count4xx + 1 #add 1 to count for each 4xx code
 
 print ("Percent of 4xx status codes =", str((count4xx / len(match_list)) * 100), "%")
-# print(match_list)
-# Perform math and comparisions to see what % are 4xx and 3xx
 # Close the file
 file.close()
