@@ -56,7 +56,7 @@ print()
 #5. what was the most requested file?
 import collections
 
-logfile = open("yourlogfile.log", "r")
+logfile = open("logs_file.log", "r")
 
 clean_log=[]
 
@@ -70,9 +70,7 @@ for line in logfile:
 
 counter = collections.Counter(clean_log)
 
-# get the Top 50 most popular URLs
-for count in counter.most_common(50):
-    print(str(count[1]) + "	" + str(count[0]))
-
+for count in counter.most_common(1):
+    print("The most requested file is:", str(count[1]) + "	" + str(count[0]))
+#6. what was the least requested file?
 logfile.close()
-#6. What was the least requested file?
