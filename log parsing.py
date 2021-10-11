@@ -53,7 +53,7 @@ print("Number of requests in the period:", n_requests)
 print("Successfully parsed log file...")
 print()
 
-#5. what was the most requested file?
+#6. what was the least requested file?
 import collections
 
 logfile = open("logs_file.log", "r")
@@ -70,7 +70,6 @@ for line in logfile:
 
 counter = collections.Counter(clean_log)
 
-for count in counter.most_common(1):
-    print("The most requested file is:", str(count[1]) + "	" + str(count[0]))
-#6. what was the least requested file?
+for count in counter.most_common(-2:-1):
+    print("The least requested file is:", str(count[1]) + "	" + str(count[0]))
 logfile.close()
