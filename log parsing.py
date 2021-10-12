@@ -52,3 +52,50 @@ print("Number of requests in the period:", n_requests)
 # Print if the file was successfully parsed or not
 print("Successfully parsed log file...")
 print()
+
+# Questions 3 and 4. What % of HTTP status codes were 4xx and what % were 3xx?
+# Beginning of code
+# Import to retrieve log file from url
+import urllib.request
+import shutil
+import re
+# Download the file from `url` and save it locally under `logs_file.log`:
+with urllib.request.urlopen('https://s3.amazonaws.com/tcmg476/http_access_log') as response, open('logs_file.log', 'wb') as out_file:
+    shutil.copyfileobj(response, out_file)
+    
+# Open file to run regex to split up strings
+file = open("logs_file.log", "r")
+# Run Regex on log file
+regex = '(\d{3})'
+# Create a list
+match_list = []
+read_line = True
+
+with open('logs_file.log', 'r') as file:
+    if read_line == True:
+        for line in file:
+            for match in re.finditer(regex, line, re.S):
+                match_text = match.group()
+                match_list.append(match_text)
+              #  print(match_text)
+    else:
+        data = file.read()
+        for match in re.finditer(regex, data, re.S):
+            match_text = match.group()
+            match_list.append(match.text)
+
+count3xx = 0 #counter to keep track of total 3xx codes in list
+for res in match_list: #loop through contents of list
+    if(res[0] == '3'): # returns first digit of codes, checks if = 3
+        count3xx = count3xx + 1 #add 1 to count for each 3xx code
+
+print ("Percent of 3xx status codes =", str((count3xx / len(match_list)) * 100), "%")
+
+count4xx = 0 #counter to keep track of total 4xx codes in list
+for res in match_list: #loop through contents of list
+    if(res[0] == '4'): # returns first digit of codes, checks if = 4
+        count4xx = count4xx + 1 #add 1 to count for each 4xx code
+
+print ("Percent of 4xx status codes =", str((count4xx / len(match_list)) * 100), "%")
+# Close the file
+file.close()
