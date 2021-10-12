@@ -351,6 +351,10 @@ counter = collections.Counter(clean_log)
 # get the most popular URL
 for count in counter.most_common(1):
     print(str(count[1]) + "    " + str(count[0]))
+      
+#question 6: what was the least requested file?
+for count in counter.most_common(-2:-1):
+    print("The least requested file is:", str(count[1]) + "	" + str(count[0]))
 logfile.close()
 
 
