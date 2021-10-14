@@ -396,5 +396,51 @@ for count in counter.most_common(1):
 for count in counter.most_common()[-2:-1]:
     print(f"The least requested file is: {str(count[0])} with {str(count[1])} request.")
 logfile.close()
+#Split each month into separate file based off month
+months = 
+    ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct",
+    "Nov", "Dec"]
+#Reads contents in file
+with logfile = open("logs_file.log", "r")
+#Looping through each line to see what month is examined
+for m in months:
+    track = data(f'{m}/1995')
+    #Writing each line from file to new file destination
+    if m in track = "Jan":
+        filestring1 = file.write("Jan" + "\n")
+        if m in track = "Feb":
+            filestring2 = file.write("Feb" + "\n")
+            if m in track = "Mar":
+                filestring3 = file.write("Mar" + "\n")
+                if m in track = "Apr":
+                    filestring4 = file.write("Apr" + "\n")
+                    if m in track = "May":
+                        filestring5 = file.write("May" + "\n")
+                        if m in track = "Jun":
+                            filestring6 = file.write("Jun" + "\n")
+                            if m in track = "Jul":
+                                filestring7 = file.write("Jul" + "\n")
+                                if m in track = "Aug":
+                                    filestring8 = file.write("Aug" + "\n")
+                                    if m in track = "Sep":
+                                        filestring9 = file.write("Sep" + "\n")
+                                        if m in track = "Oct":
+                                            filestring10 = file.write("Oct" + "\n")
+                                            if m in track = "Nov":
+                                                filestring11 = file.write("Nov" + "\n")
+                                                if m in track = "Dec":
+                                                    filestring12 = file.write("Dec" + "\n")
+
+#Closes file
+    logfile.close()
+#Creates list and lets user know that files where created
+    list = [filestring1, filestring2, filestring3, filestring4, filestring5, filestring6, filestring7, filestring8, filestring9, filestring10, filestring11, filestring12]
+    lines = list(f)
+    for line in lines:
+        file.write(line)
+
+print("Data has been registered successfully!")
+
+
 
 
