@@ -396,5 +396,69 @@ for count in counter.most_common(1):
 for count in counter.most_common()[-2:-1]:
     print(f"The least requested file is: {str(count[0])} with {str(count[1])} request.")
 logfile.close()
+# Opens log file to read and monthly files to write
+logfile = open("logs_file.log", "r")
+jan_file = open("jan.txt", "w")
+feb_file = open("feb.txt", "w")
+mar_file = open("mar.txt", "w")
+apr_file = open("apr.txt", "w")
+may_file = open("may.txt", "w")
+jun_file = open("jun.txt", "w")
+jul_file = open("jul.txt", "w")
+aug_file = open("aug.txt", "w")
+sep_file = open("sep.txt", "w")
+oct_file = open("oct.txt", "w")
+nov_file = open("nov.txt", "w")
+dec_file = open("dec.txt", "w")
+oct_1994_file = open("oct_1994.txt", "w")
 
+# Reads data from log file and writes into corresponding file per month
+
+with open("logs_file.log", "r") as f:
+    data = f.readlines()
+    for line in data:
+        if re.search(r'Jan/1995', line):
+            jan_file.write(line)
+        elif re.search(r'Feb/1995', line):
+            feb_file.write(line)
+        elif re.search(r'Mar/1995', line):
+            mar_file.write(line)
+        elif re.search(r'Apr/1995', line):
+            apr_file.write(line)
+        elif re.search(r'May/1995', line):
+            may_file.write(line)
+        elif re.search(r'Jun/1995', line):
+            jun_file.write(line)
+        elif re.search(r'Jul/1995', line):
+            jul_file.write(line)
+        elif re.search(r'Aug/1995', line):
+            aug_file.write(line)
+        elif re.search(r'Sep/1995', line):
+            sep_file.write(line)
+        elif re.search(r'Oct/1995', line):
+            oct_file.write(line)
+        elif re.search(r'Nov/1994', line):
+            nov_file.write(line)
+        elif re.search(r'Dec/1994', line):
+            dec_file.write(line)
+        elif re.search(r'Oct/1994', line):
+            oct_1994_file.write(line)
+
+# Closes files
+logfile.close()
+jan_file.close()
+feb_file.close()
+mar_file.close()
+apr_file.close()
+may_file.close()
+jun_file.close()
+jul_file.close()
+aug_file.close()
+sep_file.close()
+oct_file.close()
+nov_file.close()
+dec_file.close()
+oct_1994_file.close()
+
+print("Data has been registered successfully!")
 
